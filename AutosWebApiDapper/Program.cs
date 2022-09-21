@@ -16,6 +16,9 @@ builder.Services.AddDbContext<AutosDBContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("SqlConnection"));
 });
 
+// Automapper
+builder.Services.AddAutoMapper(typeof(Program));
+
 
 
 var app = builder.Build();

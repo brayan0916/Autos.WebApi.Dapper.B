@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,10 +10,12 @@ namespace AutosWebApiDapper.Controllers
     public class AutosController : ControllerBase
     {
         private readonly AutosDBContext _context;
+        private readonly IMapper _mapper;
 
-        public AutosController(AutosDBContext context)
+        public AutosController(AutosDBContext context, IMapper mapper)
         {
             _context = context;
+            _mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
@@ -20,7 +23,8 @@ namespace AutosWebApiDapper.Controllers
             try
             {
                 var listAutos= await _context.autosCar.ToListAsync();
-                return Ok(listAutos);
+                var listAutosDto = _mapper.Map<IEnumerable<AutosDto>>(listAutos);
+                return Ok(listAutosDto);
             }
             catch (Exception ex)
             {
@@ -38,7 +42,8 @@ namespace AutosWebApiDapper.Controllers
                 {
                     return NotFound();
                 }
-                return Ok(Autos);
+                var autosDto = _mapper.Map<AutosDto>(Autos);
+                return Ok(autosDto);
             }
             catch (Exception ex)
             {
@@ -47,13 +52,15 @@ namespace AutosWebApiDapper.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Guardar(AutosEntity Autos)
+        public async Task<IActionResult> Guardar(AutosDto autosDto)
         {
             try
             {
+                var Autos = _mapper.Map<AutosEntity>(autosDto);
                 Autos.Date = DateTime.Now;
                 _context.Add(Autos);
                 await _context.SaveChangesAsync();
+                var autosItemDto = _mapper.Map<AutosDto>(Autos);
                 return CreatedAtAction("Get", new { id = Autos.Id }, Autos); ;
             }
             catch (Exception ex)
