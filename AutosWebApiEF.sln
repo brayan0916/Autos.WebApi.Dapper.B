@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.2.32630.192
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AutosWebApiDapper", "AutosWebApiDapper\AutosWebApiDapper.csproj", "{ED03C2BC-28A2-4987-B0BE-A179082F7BE9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AutosWebApiEF", "AutosWebApiDapper\AutosWebApiEF.csproj", "{ED03C2BC-28A2-4987-B0BE-A179082F7BE9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aplicacion", "Aplicacion", "{27CF806D-1136-439A-AC79-E47A492B7A0B}"
 EndProject
@@ -15,25 +15,25 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Dominio", "Dominio", "{0697
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Transversal", "Transversal", "{1BEFEEDA-6934-4C2E-9185-821A83D1A8C6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Aplicacion.DTO", "Autos.Aplicacion.DTO\Autos.Aplicacion.DTO.csproj", "{5579A858-C4F8-4EC4-9B21-68B17C1CF762}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Aplicacion.DTO", "Autos.Aplicacion.DTO\Autos.Aplicacion.DTO.csproj", "{5579A858-C4F8-4EC4-9B21-68B17C1CF762}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Aplicacion.Interface", "Autos.Aplicacion.Interface\Autos.Aplicacion.Interface.csproj", "{39B4AB03-0296-48AD-8393-28C1051D3726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Aplicacion.Interface", "Autos.Aplicacion.Interface\Autos.Aplicacion.Interface.csproj", "{39B4AB03-0296-48AD-8393-28C1051D3726}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Aplicacion.Main", "Autos.Aplicacion.Main\Autos.Aplicacion.Main.csproj", "{AB7998C8-1256-4EA7-ACB8-204A52177169}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Aplicacion.Main", "Autos.Aplicacion.Main\Autos.Aplicacion.Main.csproj", "{AB7998C8-1256-4EA7-ACB8-204A52177169}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Dominio.Entity", "Autos.Dominio.Entity\Autos.Dominio.Entity.csproj", "{B8685F46-AFE9-41C1-AEAB-E596667371CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Dominio.Entity", "Autos.Dominio.Entity\Autos.Dominio.Entity.csproj", "{B8685F46-AFE9-41C1-AEAB-E596667371CD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Dominio.Interface", "Autos.Dominio.Interface\Autos.Dominio.Interface.csproj", "{317C2C13-FAF7-4C63-B1D6-ADD7E8239627}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Dominio.Interface", "Autos.Dominio.Interface\Autos.Dominio.Interface.csproj", "{317C2C13-FAF7-4C63-B1D6-ADD7E8239627}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Dominio.Core", "Autos.Dominio.Core\Autos.Dominio.Core.csproj", "{0697794B-66B6-430A-9744-D70F3F46DEBF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Dominio.Core", "Autos.Dominio.Core\Autos.Dominio.Core.csproj", "{0697794B-66B6-430A-9744-D70F3F46DEBF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Infraestructura.Interface", "Autos.Infraestructura.Interface\Autos.Infraestructura.Interface.csproj", "{B67B232D-1F2D-4698-8517-4BE6BF3C3E2A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Infraestructura.Interface", "Autos.Infraestructura.Interface\Autos.Infraestructura.Interface.csproj", "{B67B232D-1F2D-4698-8517-4BE6BF3C3E2A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Infraestructura.Repository", "Autos.Infraestructura.Repository\Autos.Infraestructura.Repository.csproj", "{CA3E119F-C444-428A-B2FB-EEBE86F505FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Infraestructura.Repository", "Autos.Infraestructura.Repository\Autos.Infraestructura.Repository.csproj", "{CA3E119F-C444-428A-B2FB-EEBE86F505FC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Transversal.Commons", "Autos.Transversal.Commons\Autos.Transversal.Commons.csproj", "{10EEAD4A-437F-409B-9B20-550A7085F502}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Transversal.Commons", "Autos.Transversal.Commons\Autos.Transversal.Commons.csproj", "{10EEAD4A-437F-409B-9B20-550A7085F502}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autos.Transversal.Mapper", "Autos.Transversal.Mapper\Autos.Transversal.Mapper.csproj", "{009FA5AA-0687-4FBD-9B6B-354E6A468EC9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Autos.Transversal.Mapper", "Autos.Transversal.Mapper\Autos.Transversal.Mapper.csproj", "{009FA5AA-0687-4FBD-9B6B-354E6A468EC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

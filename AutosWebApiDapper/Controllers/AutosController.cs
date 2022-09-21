@@ -9,20 +9,20 @@ namespace AutosWebApiDapper.Controllers
     [ApiController]
     public class AutosController : ControllerBase
     {
-        private readonly AutosDBContext _context;
+        private readonly IAutosRepository _autoRepository;
         private readonly IMapper _mapper;
 
-        public AutosController(AutosDBContext context, IMapper mapper)
+        public AutosController( IAutosRepository autoRepository, IMapper mapper)
         {
-            _context = context;
-            _mapper = mapper;
+            _autoRepository = autoRepository;
+             _mapper = mapper;
         }
         [HttpGet]
         public async Task<IActionResult> Get()
         {
             try
             {
-                var listAutos= await _context.autosCar.ToListAsync();
+                var listAutos= await _autoRepository.GetListAutos();
                 var listAutosDto = _mapper.Map<IEnumerable<AutosDto>>(listAutos);
                 return Ok(listAutosDto);
             }
@@ -36,9 +36,9 @@ namespace AutosWebApiDapper.Controllers
         {
             try
             {
-                var Autos = await _context.autosCar.FindAsync(id);
+                var Autos = await _autoRepository.GetAutosId(id);
 
-                if(Autos == null)
+                if (Autos == null)
                 {
                     return NotFound();
                 }
@@ -58,8 +58,8 @@ namespace AutosWebApiDapper.Controllers
             {
                 var Autos = _mapper.Map<AutosEntity>(autosDto);
                 Autos.Date = DateTime.Now;
-                _context.Add(Autos);
-                await _context.SaveChangesAsync();
+               
+                await _autoRepository.AddAutos(Autos);
                 var autosItemDto = _mapper.Map<AutosDto>(Autos);
                 return CreatedAtAction("Get", new { id = Autos.Id }, Autos); ;
             }

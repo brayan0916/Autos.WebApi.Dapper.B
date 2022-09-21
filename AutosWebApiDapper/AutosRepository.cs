@@ -1,4 +1,6 @@
-﻿namespace AutosWebApiDapper
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace AutosWebApiDapper
 {
     public class AutosRepository : IAutosRepository
     {
@@ -10,19 +12,21 @@
             _context = context;
         }
 
-        public Task<AutosEntity> AddAutos(AutosEntity autos)
+        public async Task<AutosEntity> AddAutos(AutosEntity autos)
         {
-            throw new NotImplementedException();
+            _context.Add(autos);
+            await _context.SaveChangesAsync();
+            return autos;
         }
 
-        public Task<AutosEntity> GetAutos(int id)
+        public async Task<AutosEntity> GetAutosId(int id)
         {
-            throw new NotImplementedException();
+           return  await _context.autosCar.FindAsync(id);
         }
 
-        public Task<List<AutosEntity>> GetListAutos()
+        public async Task<List<AutosEntity>> GetListAutos()
         {
-            throw new NotImplementedException();
+            return  await _context.autosCar.ToListAsync();
         }
     }
 }

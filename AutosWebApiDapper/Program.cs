@@ -19,7 +19,8 @@ builder.Services.AddDbContext<AutosDBContext>(options =>
 // Automapper
 builder.Services.AddAutoMapper(typeof(Program));
 
-
+// Add Services
+builder.Services.AddScoped<IAutosRepository, AutosRepository>();
 
 var app = builder.Build();
 

@@ -5,7 +5,7 @@
        
 
         Task<List<AutosEntity>> GetListAutos();
-        Task<AutosEntity> GetAutos(int id);
+        Task<AutosEntity> GetAutosId(int id);
         
         Task<AutosEntity> AddAutos(AutosEntity autos);
         
